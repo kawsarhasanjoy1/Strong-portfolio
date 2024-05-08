@@ -4,3 +4,4 @@
 
 
 h1{ @apply text-2xl bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text font-bold}
+li{ @apply bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text font-bold}

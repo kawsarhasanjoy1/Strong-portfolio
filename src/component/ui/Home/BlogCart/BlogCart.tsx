@@ -5,7 +5,6 @@ import { AiFillLike } from "react-icons/ai";
 import { FaCalendar } from "react-icons/fa";
 
 const BlogCart = ({ blog }: any) => {
-  console.log(blog)
   return (
     <div className="card w-full bg-base-100 space-y-4 bg-[#2220207a] p-5 rounded-2xl shadow-2xl">
       <figure>

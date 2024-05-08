@@ -6,7 +6,7 @@ import React from "react";
 import Button from "../../Button/Button";
 import { FiFacebook, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 import Image from "next/image";
-import Link from "next/link";
+
 
 const Banner = () => {
   const image = {
@@ -28,17 +28,11 @@ const Banner = () => {
             );
           })}
         </p>
-        <p className={` md:text-3xl font-bold text-xl uppercase text-white `}>
-          {split.map((item, index) => {
-            return (
-              <span style={{ transitionDelay: `${index * 30}ms` }}>{item}</span>
-            );
-          })}
-        </p>
+      
         <h1 className=" text-2xl bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text font-bold">
           And I'm a Mern-stack developer
         </h1>
-        <p className="text-xl font-bold"></p>
+        
         <div className=" py-2  md:flex gap-8 space-y-8 md:space-y-0">
           <div>
             <a download={true} href="/kawsar (1).pdf">

@@ -7,7 +7,7 @@ const layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Header />
-      <div className="pt-16  bg-gradient-to-r from-[#180c54] to-[#060024] px-4 md:px-0">
+      <div className="pt-16  bg-gradient-to-r from-[#180c54] to-[#060024] px-4 md:px-0  py-10">
         <Container>{children}</Container>
       </div>
       <Footer />
