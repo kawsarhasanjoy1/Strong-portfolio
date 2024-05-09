@@ -17,7 +17,7 @@ const BlogCart = ({ blog }: any) => {
         />
       </figure>
       <div className="card-body space-y-4">
-        <p className="flex items-center justify-center text-accent bg-cyan-100 w-44 rounded-full py-1 text-black">
+        <p className="flex items-center justify-center text-accent bg-gradient-to-r from-green-400 to-blue-500 w-44 rounded-full py-1 text-white">
           <FaCalendar className="mr-2" />
           {blog?.date}
         </p>
