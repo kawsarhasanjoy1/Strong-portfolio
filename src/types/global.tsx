@@ -20,7 +20,7 @@ export interface TSkill {
 }
 
 export type TPortfolio = {
-  id: number;
+  _id: number;
   name: string;
   image: string;
   description: string;

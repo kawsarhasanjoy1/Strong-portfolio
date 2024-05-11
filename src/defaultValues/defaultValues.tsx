@@ -7,3 +7,25 @@ export const loginDefaultValue = {
   email: "",
   password: "",
 };
+
+export const portfolioDefaultValue = {
+  name: "",
+  image: "",
+  description: "",
+  liveLink: "",
+  githubLink: "",
+};
+
+
+
+export const skillDefaultValue = {
+  name: "",
+  image: "",
+};
+
+export const blogDefaultValue = {
+  name: '',
+  what: '',
+  how: '',
+  image: '',
+}

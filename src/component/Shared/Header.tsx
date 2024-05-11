@@ -15,8 +15,7 @@ const Header = () => {
   };
   const user = useAppSelector((store) => store.auth.user);
   const dispatch = useAppDispatch();
-
-  const isAdmin = "admin";
+  const isAdmin = user?.role == "admin";
   return (
     <div className=" z-20 fixed w-full uppercase">
       <div className=" flex px-3 text-black font-semibold max-w-[1280px] text-[16px]  bg-[#feffff] w-full h-14 mx-auto shadow-2xl justify-between">
@@ -66,8 +65,10 @@ const Header = () => {
               <Link href={"/contact"}>Contact</Link>
             </li>
             <li className="group  rounded-full flex  cursor-pointer flex-col">
-              {user?.role === "admin" ? (
-                <Link href={"/dashboard"}>Dashboard</Link>
+              {isAdmin ? (
+                <Link href={`/dashboard/${isAdmin ? "admin" : ""}/project/add-project`}>
+                  Dashboard
+                </Link>
               ) : (
                 ""
               )}

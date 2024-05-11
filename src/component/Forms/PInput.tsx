@@ -21,7 +21,7 @@ const PInput = ({ className, type, name, label, placeHolder }: TPInput) => {
               type={type}
               placeholder={placeHolder}
             />
-            <p className="border text-sm text-white bg-red-500 px-2">{error?.message}</p>
+            <p className=" text-sm text-white bg-red-500 px-2">{error?.message}</p>
           </div>
         )}
       />
