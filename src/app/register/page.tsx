@@ -1,3 +1,4 @@
+"use client";
 import PForm from "@/component/Forms/PForm";
 import PInput from "@/component/Forms/PInput";
 import { registerDefaultValue } from "@/defaultValues/defaultValues";
@@ -31,14 +32,13 @@ const page = () => {
           <PForm
             onSubmit={HandleToRegister}
             defaultValues={registerDefaultValue}
-            
           >
             <div className="flex  w-full flex-col items-center justify-center gap-4">
               <div className=" w-full mx-auto">
                 <PInput
                   className=" rounded-full text-black w-full md:w-[60%] mx-auto flex justify-center"
                   type="text"
-                  name="name"
+                  name="username"
                   placeHolder="Enter your name"
                 />
 
@@ -51,7 +51,7 @@ const page = () => {
                 <PInput
                   className=" rounded-full text-black w-full md:w-[60%] mx-auto flex justify-center"
                   type="password"
-                  name="email"
+                  name="password"
                   placeHolder="Enter your password"
                 />
               </div>
@@ -61,10 +61,10 @@ const page = () => {
               </button>
             </div>
           </PForm>
-          <Link href={"/register"}>
+          <Link href={"/login"}>
             {" "}
             <p className=" absolute bottom-3 hover:text-yellow-500 text-center flex justify-center items-center gap-2 md:w-[40%] w-full text-md  text-black duration-500">
-              Create Your Account <FaArrowRight />
+              Login Your Account <FaArrowRight />
             </p>
           </Link>
         </div>

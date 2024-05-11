@@ -1,3 +1,4 @@
+'use client'
 import { TPInput } from "@/types/global";
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";

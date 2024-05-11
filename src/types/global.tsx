@@ -38,7 +38,7 @@ export type TBlog = {
   why: string
 }
 
-type TConfig = {
+export type TConfig = {
   defaultValues?: Record<string, any>;
   resolver?: any;
 };

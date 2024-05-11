@@ -1,20 +1,20 @@
-import { TChildren, TForm } from "@/types/global";
-import React, { ReactNode } from "react";
-import {
-  FieldValues,
-  FormProvider,
-  SubmitHandler,
-  useForm,
-} from "react-hook-form";
+"use client";
+import { TConfig, TForm } from "@/types/global";
+import { FieldValues, FormProvider, useForm } from "react-hook-form";
 
-const PForm = ({ children, onSubmit }: TForm) => {
-  const methods = useForm();
+const PForm = ({ children, onSubmit, defaultValues, resolver }: TForm) => {
+  const formConfig: TConfig = {};
+  if (defaultValues) {
+    formConfig["defaultValues"] = defaultValues;
+  }
+  const methods = useForm(formConfig);
+  const { handleSubmit } = methods;
   const onSubmitHandler = (data: FieldValues) => {
     onSubmit(data);
   };
   return (
     <FormProvider {...methods}>
-      <form onSubmit={onSubmitHandler}>{children}</form>
+      <form onSubmit={handleSubmit(onSubmitHandler)}>{children}</form>
     </FormProvider>
   );
 };
