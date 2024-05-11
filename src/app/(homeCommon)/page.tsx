@@ -12,7 +12,7 @@ const page = () => {
       <About />
       <Portfolio />
       <Blog />
-      <Contact />
+      {/* <Contact /> */}
     </div>
   );
 };

@@ -4,6 +4,8 @@ import { FaBars } from "react-icons/fa";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { logOut } from "@/redux/fetures/userSlice";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +13,8 @@ const Header = () => {
   const HandleHeader = () => {
     setIsOpen(!isOpen);
   };
+  const user = useAppSelector((store) => store.auth.user);
+  const dispatch = useAppDispatch();
 
   const isAdmin = "admin";
   return (
@@ -61,29 +65,31 @@ const Header = () => {
             <li className="group  rounded-full flex  cursor-pointer flex-col">
               <Link href={"/contact"}>Contact</Link>
             </li>
-            {/* <li className="group flex  cursor-pointer flex-col">
-              <Link href={`/dashboard/${isAdmin}`}>Dashboard</Link>
-             
-            </li> */}
-
-            {/* <li
-              onClick={HandleToMode}
-              className="group flex  cursor-pointer flex-col relative justify-center items-center rounded-full duration-500"
-            >
-              {mode ? (
-                <IoSunnyOutline size={25} />
+            <li className="group  rounded-full flex  cursor-pointer flex-col">
+              {user?.role === "admin" ? (
+                <Link href={"/dashboard"}>Dashboard</Link>
               ) : (
-                <HiOutlineMoon size={25} />
+                ""
               )}
-              <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
-            </li> */}
+            </li>
           </ul>
         </div>
-        <div className=" flex justify-center items-center">
-          <Link href={"/login"}>
-            <button className=" btn rounded-full">login</button>
-          </Link>
-        </div>
+        {user ? (
+          <div className=" flex justify-center items-center">
+            <button
+              onClick={() => dispatch(logOut(""))}
+              className=" btn rounded-full"
+            >
+              LogOut
+            </button>
+          </div>
+        ) : (
+          <div className=" flex justify-center items-center">
+            <Link href={"/login"}>
+              <button className=" btn rounded-full">login</button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

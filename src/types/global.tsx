@@ -29,14 +29,14 @@ export type TPortfolio = {
 };
 
 export type TBlog = {
-  id: string
-  name: string
-  date: string
-  image: string
-  like: number
-  what: string
-  why: string
-}
+  id: string;
+  name: string;
+  date: string;
+  image: string;
+  like: number;
+  what: string;
+  why: string;
+};
 
 export type TConfig = {
   defaultValues?: Record<string, any>;
@@ -48,3 +48,10 @@ export type TForm = {
   onSubmit: SubmitHandler<FieldValues>;
   defaultValues: Record<string, any>;
 } & TConfig;
+
+export interface TUser {
+  username: string;
+  email: string;
+  password: string;
+  role: "user" | "admin";
+}

@@ -7,6 +7,9 @@ const PForm = ({ children, onSubmit, defaultValues, resolver }: TForm) => {
   if (defaultValues) {
     formConfig["defaultValues"] = defaultValues;
   }
+  if (resolver) {
+    formConfig["resolver"] = resolver;
+  }
   const methods = useForm(formConfig);
   const { handleSubmit } = methods;
   const onSubmitHandler = (data: FieldValues) => {
