@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { FieldValues, SubmitHandler } from "react-hook-form";
 
 export type TChildren = {
   children: ReactNode;
@@ -36,3 +37,14 @@ export type TBlog = {
   what: string
   why: string
 }
+
+type TConfig = {
+  defaultValues?: Record<string, any>;
+  resolver?: any;
+};
+
+export type TForm = {
+  children: ReactNode;
+  onSubmit: SubmitHandler<FieldValues>;
+  defaultValues: Record<string, any>;
+} & TConfig;

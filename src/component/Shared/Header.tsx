@@ -4,7 +4,6 @@ import { FaBars } from "react-icons/fa";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Button from "../ui/Button/Button";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +81,7 @@ const Header = () => {
         </div>
         <div className=" flex justify-center items-center">
           <Link href={"/login"}>
-            <Button className="hidden md:block rounded-full">Login</Button>
+            <button className=" btn rounded-full">login</button>
           </Link>
         </div>
       </div>
