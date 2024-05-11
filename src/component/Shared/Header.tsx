@@ -81,8 +81,8 @@ const Header = () => {
           </ul>
         </div>
         <div className=" flex justify-center items-center">
-          <Link href={"/contact"}>
-            <Button className="hidden md:block rounded-full">Hire Me</Button>
+          <Link href={"/login"}>
+            <Button className="hidden md:block rounded-full">Login</Button>
           </Link>
         </div>
       </div>
