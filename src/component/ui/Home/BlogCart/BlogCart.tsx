@@ -1,12 +1,24 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { AiFillLike } from "react-icons/ai";
 import { FaCalendar } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const BlogCart = ({ blog }: any) => {
+  console.log(blog)
+  const blogV = {
+    hidden: { rotateY: 0 },
+    visible: { rotateY: 360, transition: { duration: 2 } },
+  };
+
   return (
-    <div className="card w-full bg-base-100 space-y-4 bg-[#2220207a] p-5 rounded-2xl shadow-2xl">
+    <motion.div
+      variants={blogV}
+      whileHover={"visible"}
+      initial="hidden"
+      className="card w-full bg-base-100 space-y-4 bg-[#2220207a] p-5 rounded-2xl shadow-2xl"
+    >
       <figure>
         <Image
           src={blog?.image}
@@ -19,10 +31,10 @@ const BlogCart = ({ blog }: any) => {
       <div className="card-body space-y-4">
         <p className="flex items-center justify-center text-accent bg-gradient-to-r from-green-400 to-blue-500 w-44 rounded-full py-1 text-white">
           <FaCalendar className="mr-2" />
-          {blog?.date}
+          {blog?.createdAt}
         </p>
-        <h2 className="card-title text-start">
-          {blog?.what.slice(0, 200)}
+        <h2 className=" text-start">
+          <div dangerouslySetInnerHTML={{ __html: blog.description }} />
           <Link
             href={`/blog/${blog?.id}`}
             className=" text-red-400 hover:text-red-600 font-bold block"
@@ -41,7 +53,7 @@ const BlogCart = ({ blog }: any) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

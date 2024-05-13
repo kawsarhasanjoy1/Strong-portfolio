@@ -31,13 +31,9 @@ const BlogTable = ({
           />
         </td>
         <td className="py-4 px-6 border-b  font-semibold">{product?.name}</td>
-        <td className="py-4 px-6 border-b  font-semibold">
-          {(product?.what).slice(0, 20)}
-        </td>
-
-        <td className="py-4 px-6 border-b text-sm shrink-0">
-          {(product?.how).slice(0, 20)}
-        </td>
+        {/* <td className=" py-4 px-6 border-b font-semibold">
+        <div dangerouslySetInnerHTML={{ __html: product?.description }} />
+        </td> */}
         <td className="py-4 px-6 border-b text-end">
           <button
             onClick={() => HandleToDelete(product?._id)}

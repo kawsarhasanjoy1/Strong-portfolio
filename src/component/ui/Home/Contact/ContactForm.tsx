@@ -1,7 +1,5 @@
 "use client";
-import PInput from "@/component/Forms/PInput";
 import React from "react";
-import { FieldValues } from "react-hook-form";
 import Button from "../../Button/Button";
 import { useForm } from "@formspree/react";
 import toast from "react-hot-toast";
@@ -20,45 +18,45 @@ const ContactForm = () => {
     >
       <div className="shadow-2xl bg-[#2220207a] mt-[50px] md:px-10 px-2 py-6 rounded-[50px] space-y-[19px] text-black md:text-white">
         <div className="form-control w-full">
-          <PInput
-            className=" w-full text-white"
+          <label htmlFor="">Name</label>
+          <input
+            className={` border border-[#1B8EF8] bg-transparent px-4 rounded-md py-2 text-[#1B8EF8] focus:outline-none `}
             type="text"
             name="name"
-            label="Name"
-            placeHolder="Enter your name"
+            placeholder={"Enter your name"}
           />
         </div>
         <div className="form-control w-full ">
-          <PInput
-            className=" w-full text-white"
-            type="text"
+          <label htmlFor="">Email</label>
+          <input
+            className={` border border-[#1B8EF8] bg-transparent px-4 rounded-md py-2 text-[#1B8EF8] focus:outline-none `}
+            type="email"
             name="email"
-            label="Email"
-            placeHolder="Enter your email"
+            placeholder={"Enter your email"}
           />
         </div>
         <div className="form-control w-full ">
-          <PInput
-            className=" w-full text-white"
+          <label htmlFor="">Subject</label>
+          <input
+            className={` border border-[#1B8EF8] bg-transparent px-4 rounded-md py-2 text-[#1B8EF8] focus:outline-none `}
             type="text"
             name="subject"
-            label="Subject"
-            placeHolder="Enter your subject"
+            placeholder={"Enter your subject"}
           />
         </div>
         <div className="form-control w-full ">
-          <PInput
-            className=" h-32 w-full text-white"
+          <label htmlFor="">Message</label>
+          <input
+            className={` border border-[#1B8EF8] bg-transparent px-4 rounded-md py-2 text-[#1B8EF8] focus:outline-none h-40`}
             type="text"
             name="message"
-            label="Message"
-            placeHolder="Enter your message"
+            placeholder={"Enter your message"}
           />
         </div>
         <div className=" text-start">
-          <Button type="submit" className="">
+          <button type="submit" className="btn">
             Submit
-          </Button>
+          </button>
         </div>
       </div>
     </form>

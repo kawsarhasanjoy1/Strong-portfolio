@@ -79,7 +79,7 @@ const Header = () => {
           <div className=" flex justify-center items-center">
             <button
               onClick={() => dispatch(logOut(""))}
-              className=" btn rounded-full"
+              className=" btn rounded-full border-none hidden md:block"
             >
               LogOut
             </button>
@@ -87,7 +87,7 @@ const Header = () => {
         ) : (
           <div className=" flex justify-center items-center">
             <Link href={"/login"}>
-              <button className=" btn rounded-full">login</button>
+              <button className=" btn rounded-full border-none hidden md:block">login</button>
             </Link>
           </div>
         )}

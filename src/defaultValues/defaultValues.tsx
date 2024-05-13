@@ -16,16 +16,13 @@ export const portfolioDefaultValue = {
   githubLink: "",
 };
 
-
-
 export const skillDefaultValue = {
   name: "",
   image: "",
 };
 
 export const blogDefaultValue = {
-  name: '',
-  what: '',
-  how: '',
-  image: '',
-}
+  name: "",
+  description: "",
+  image: "",
+};

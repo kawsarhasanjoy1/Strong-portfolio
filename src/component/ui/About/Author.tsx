@@ -1,15 +1,34 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { FaFacebook, FaFlag } from "react-icons/fa";
+'use client'
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useAnimation, useInView } from "framer-motion";
+import Image from "next/image"
+import { motion } from "framer-motion"
+import React, { useEffect, useRef } from "react";
 import { FiFacebook, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { MdCall, MdEmail, MdLocationPin } from "react-icons/md";
+import { FaFlag } from "react-icons/fa";
 
 const Author = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref);
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView]);
+
+  const containerVariants = {
+    hidden: { opacity: 0, x: 200, transition: { duration: 1 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 2 } },
+  };
+
   return (
-    <div className=" grid grid-cols-1 gap-10 md:grid-cols-2 mt-20 md:gap-40 mx-auto text-white">
-      <div className="space-y-5 md:w-11/12 mx-auto">
+    <motion.div variants={containerVariants} initial='hidden' ref={ref} animate={controls}  className=" grid grid-cols-1 gap-10 md:grid-cols-2 mt-20 md:gap-40 mx-auto text-white">
+      <div  className="space-y-5 md:w-11/12 mx-auto">
         <p className=" text-xl md:text-3xl  text-center">
           I am a MERN Stack Web Developer
         </p>
@@ -63,7 +82,7 @@ const Author = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

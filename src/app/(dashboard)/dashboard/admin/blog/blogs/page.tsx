@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 const page = () => {
   const [deleteProject] = useDeleteBlogMutation();
   const { data } = useGetBlogQuery(undefined);
- console.log(data)
+  console.log(data);
   const HandleToDelete = async (e: any) => {
     const res = await deleteProject(e).unwrap();
     if (res.success) {
@@ -24,8 +24,7 @@ const page = () => {
           <tr className="bg-slate-200 text-black border-b-2 shadow-xl rounded-t-md">
             <th className="py-4 px-6 text-lg text-left border-b">Image</th>
             <th className="py-4 px-6 text-lg text-left border-b">Name</th>
-            <th className="py-4 px-6 text-lg text-left border-b">What</th>
-            <th className="py-4 px-6 text-lg text-left border-b">How</th>
+
             <th className="py-4 px-6 text-lg border-b text-end">Action</th>
           </tr>
         </thead>

@@ -1,9 +1,22 @@
-import React from "react";
+'use client'
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { button, icon } from "@/FramarMotion/motionVarients";
 
 const Resume = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref);
+  const controls = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView]);
   return (
     <div className=" grid grid-cols-1 md:grid-cols-2 gap-20 my-24">
-      <div>
+      <motion.div variants={icon} animate={controls} initial='hidden' ref={ref} >
         <p className=" font-bold text-3xl text-white my-10">My Experience</p>
         <div className=" space-y-6">
           <div className=" bg-[#2220207a] py-5 md:h-48 h-56 flex flex-col justify-center item-center px-8 hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-green-400 duration-500 rounded-lg space-y-3">
@@ -30,8 +43,8 @@ const Resume = () => {
             </p>
           </div>
         </div>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div variants={button} animate={controls} initial='hidden' ref={ref}>
         <p className=" font-bold text-3xl text-white my-10">My Education</p>
         <div className=" space-y-6">
           <div className=" bg-[#2220207a] py-5 md:h-48 h-56 flex flex-col justify-center item-center px-8 hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-green-400 duration-500 rounded-lg space-y-3">
@@ -61,7 +74,7 @@ const Resume = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

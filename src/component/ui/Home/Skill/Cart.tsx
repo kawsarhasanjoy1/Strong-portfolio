@@ -6,7 +6,7 @@ import React from "react";
 const Cart = ({ item }: { item: TSkill }) => {
   return (
     <div>
-      <div className=" border md:w-48 md:h-48 w-32 h-28  md:pt-10 pt-4 pb-4 font-bold font-mono bg-slate-800  hover:bg-slate-600 rounded-lg hover:transition-width duration-500 ease-in-our shadow-2xl cursor-pointer mx-auto ">
+      <div className=" border md:w-48 md:h-48 w-32 h-28  md:pt-10 pt-4 pb-4 font-bold font-mono bg-slate-800  hover:bg-slate-600 rounded-lg hover:transition-width duration-500 ease-in-our shadow-2xl cursor-pointer mx-auto hover:rotate-[360deg] ">
         {" "}
         <Image
           width={10}

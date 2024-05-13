@@ -46,7 +46,7 @@ export type TConfig = {
 export type TForm = {
   children: ReactNode;
   onSubmit: SubmitHandler<FieldValues>;
-  defaultValues: Record<string, any>;
+  defaultValues?: Record<string, any>;
 } & TConfig;
 
 export interface TUser {
