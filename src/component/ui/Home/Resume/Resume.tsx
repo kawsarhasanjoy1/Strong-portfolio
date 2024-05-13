@@ -13,7 +13,7 @@ const Resume = () => {
     } else {
       controls.start("hidden");
     }
-  }, [inView]);
+  }, [inView,controls]);
   return (
     <div className=" grid grid-cols-1 md:grid-cols-2 gap-20 my-24">
       <motion.div variants={icon} animate={controls} initial='hidden' ref={ref} >

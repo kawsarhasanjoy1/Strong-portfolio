@@ -32,7 +32,7 @@ const PortfolioCart = ({ products }: { products: TPortfolio }) => {
             <h1 className=" text-start font-bold md:text-2xl text-xl">
               {products?.name}
             </h1>
-            <p className="text-start mt-3">{products?.description}</p>
+            <p className="text-start mt-3">{products?.description.slice(0,200)}</p>
           </div>
         </div>
       </div>

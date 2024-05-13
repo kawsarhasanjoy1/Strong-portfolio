@@ -1,99 +1,80 @@
 [
   {
-    "num": 1,
-    "img": "https://i.ibb.co/QcLK71z/html.jpg",
+    "image": "https://i.ibb.co/QcLK71z/html.jpg",
     "name": "Html"
   },
   {
-    "num": 2,
-    "img": "https://i.ibb.co/kM6rKQv/css.png",
+    "image": "https://i.ibb.co/kM6rKQv/css.png",
     "name": "Css"
   },
   {
-    "num": 3,
-    "img": "https://i.ibb.co/7t3pjyX/tailw.png",
+    "image": "https://i.ibb.co/7t3pjyX/tailw.png",
     "name": "Tailwind Css"
   },
   {
-    "num": 4,
-    "img": "https://i.ibb.co/260Zgyj/bostrap.png",
+    "image": "https://i.ibb.co/260Zgyj/bostrap.png",
     "name": "Bootstrap"
   },
 
   {
-    "num": 5,
-    "img": "https://i.ibb.co/nk7jTBt/js.png",
+    "image": "https://i.ibb.co/nk7jTBt/js.png",
     "name": "JavaScript"
   },
   {
-    "num": 11,
-    "img": "https://i.ibb.co/kqkHqks/thumbnail-001.jpg",
+    "image": "https://i.ibb.co/kqkHqks/thumbnail-001.jpg",
     "name": "TypeScript"
   },
   {
-    "num": 6,
-    "img": "https://i.ibb.co/HNPFGxL/react.png",
+    "image": "https://i.ibb.co/HNPFGxL/react.png",
     "name": "React Js"
   },
   {
-    "num": 12,
-    "img": "https://i.ibb.co/dfGm1C6/next-capgo.webp",
+    "image": "https://i.ibb.co/dfGm1C6/next-capgo.webp",
     "name": "Next js"
   },
   {
-    "num": 7,
-    "img": "https://i.ibb.co/ydvYpSM/express.png",
+    "image": "https://i.ibb.co/ydvYpSM/express.png",
     "name": "Express Js"
   },
   {
-    "num": 8,
-    "img": "https://i.ibb.co/YR75Gw2/ndoe.png",
+    "image": "https://i.ibb.co/YR75Gw2/ndoe.png",
     "name": "Node Js"
   },
   {
-    "num": 9,
-    "img": "https://i.ibb.co/QK77fnk/mongo.png",
+    "image": "https://i.ibb.co/QK77fnk/mongo.png",
     "name": "MongoDb/Mongoose"
   },
   {
-    "num": 19,
-    "img": "https://i.ibb.co/YZL6Jh1/axios.jpg",
+    "image": "https://i.ibb.co/YZL6Jh1/axios.jpg",
     "name": "Axios"
   },
 
   {
-    "num": 10,
-    "img": "https://i.ibb.co/xjhhGzK/vite.webp",
+    "image": "https://i.ibb.co/xjhhGzK/vite.webp",
     "name": "Vite"
   },
   {
-    "num": 13,
-    "img": "https://i.ibb.co/VJsctXp/images-1.png",
+    "image": "https://i.ibb.co/VJsctXp/images-1.png",
     "name": "Git"
   },
   {
-    "num": 55,
-    "img": "https://i.ibb.co/NxfLy1M/githubpng.png",
+    "image": "https://i.ibb.co/NxfLy1M/githubpng.png",
     "name": "Github"
   },
   {
-    "num": 23,
-    "img": "https://i.ibb.co/ZYj83PW/tan.jpg",
+    "image": "https://i.ibb.co/ZYj83PW/tan.jpg",
     "name": "Tan stack query"
   },
   {
-    "num": 14,
-    "img": "https://i.ibb.co/TPfVR79/netlify-pros-and-cons.webp",
+    "image": "https://i.ibb.co/TPfVR79/netlify-pros-and-cons.webp",
     "name": "Netlify"
   },
   {
-    "num": 15,
-    "img": "https://i.ibb.co/NZCCh1T/images.png",
+    "image": "https://i.ibb.co/NZCCh1T/images.png",
     "name": "Firebase"
   },
   {
-    "num": 16,
-    "img": "https://i.ibb.co/xm4MQfb/favicon512x512-vercel-typescript-express-api.png",
+    "image": "https://i.ibb.co/xm4MQfb/favicon512x512-vercel-typescript-express-api.png",
     "name": "Vercel"
   }
 ]

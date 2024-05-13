@@ -14,13 +14,13 @@ export type TPInput = {
 };
 
 export interface TSkill {
-  num: number;
-  img: string;
+  _id: number;
+  image: string;
   name: string;
 }
 
 export type TPortfolio = {
-  _id: number;
+  _id: string;
   name: string;
   image: string;
   description: string;
@@ -29,13 +29,12 @@ export type TPortfolio = {
 };
 
 export type TBlog = {
-  id: string;
+  _id: string;
   name: string;
-  date: string;
+  createdAt: string;
   image: string;
   like: number;
-  what: string;
-  why: string;
+  description: string;
 };
 
 export type TConfig = {

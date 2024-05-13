@@ -12,7 +12,7 @@ const Cart = ({ item }: { item: TSkill }) => {
           width={10}
           height={10}
           className=" md:w-20 md:h-20 w-10 h-10 object-cover mx-auto rounded-full"
-          src={item.img}
+          src={item.image}
           alt={item?.name}
         />
         <p className=" md:text-xl text-md mt-2 text-center text-white">{item.name}</p>

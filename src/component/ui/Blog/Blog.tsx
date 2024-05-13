@@ -7,7 +7,6 @@ import blogs from "../../../../public/blog.json";
 import { useGetBlogQuery } from "@/redux/api/blogApi";
 const Blog = () => {
   const {data} = useGetBlogQuery(undefined)
-  console.log(data)
   return (
     <div>
       <p className=" text-3xl font-bold text-center pb-16 text-white">

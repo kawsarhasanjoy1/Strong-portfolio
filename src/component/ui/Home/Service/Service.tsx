@@ -16,7 +16,7 @@ const Service = () => {
     } else {
       controls.start("hidden");
     }
-  }, [inView]);
+  }, [inView,controls]);
 
   return (
     <div className=" space-y-10 mt-14">

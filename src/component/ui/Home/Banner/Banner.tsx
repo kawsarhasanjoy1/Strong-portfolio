@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
@@ -24,7 +25,7 @@ const Banner = () => {
     } else {
       controls.start("hidden");
     }
-  }, [inView]);
+  }, [inView,controls]);
   const name = " kawsar Hasan Joy";
   const split = name.split("");
   return (

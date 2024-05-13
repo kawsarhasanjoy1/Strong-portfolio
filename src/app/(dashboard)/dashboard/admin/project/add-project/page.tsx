@@ -11,6 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import React from "react";
 import { FieldValues } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const page = () => {
   const [createProject] = useCreateProjectMutation();
@@ -20,8 +21,10 @@ const page = () => {
       ...values,
       image: image?.display_url,
     };
-    const res = await createProject(project);
-    console.log(res);
+    const res = await createProject(project).unwrap();
+    if (res?.success) {
+      toast.success(res?.message);
+    }
   };
   return (
     <div>
