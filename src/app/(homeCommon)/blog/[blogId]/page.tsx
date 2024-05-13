@@ -7,10 +7,10 @@ import { TBlog } from "@/types/global";
 import { useGetBlogQuery } from "@/redux/api/blogApi";
 
 const page = ({ params }: { params: { blogId: string } }) => {
+  console.log(params)
   const singleBlog = useGetBlogQuery(undefined);
-
   const filter = singleBlog?.data?.data.filter(
-    (item: any) => item?._id === params.blogId
+    (item: any) => item?._id === params?.blogId
   );
 
   return (
