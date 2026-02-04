@@ -4,108 +4,108 @@ import Link from "next/link";
 import React from "react";
 import { FaFacebookF, FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { TiLocationArrow } from "react-icons/ti";
-import EInput from "../Forms/EInput";
 import Container from "../Containert/Container";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="bg-white/60 backdrop-blur-2xl border border-white/40 shadow-[0_10px_40px_rgba(0,0,0,0.04)] rounded-[2.5rem] p-8 md:p-12">
-      <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pb-12">
-          <div className="space-y-4">
-            <h3 className="text-3xl font-black tracking-tighter text-gray-900 leading-none">
-              LET&apos;S BUILD SOMETHING <br />
-              <span className="text-blue-600 italic">EXTRAORDINARY.</span>
-            </h3>
-            <p className="text-gray-500 max-w-sm text-[13px] font-medium leading-relaxed tracking-wide">
-              Stay updated with my latest projects and tech insights. No spam,
-              just pure value.
-            </p>
+    <footer className="mt-24 mb-10 px-4 md:px-0 overflow-hidden">
+      <div className="relative bg-white border border-gray-100 rounded-md overflow-hidden shadow-[0_40px_80px_-15px_rgba(0,0,0,0.05)]">
+        
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-[100px] -mr-40 -mt-40 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-50/50 rounded-full blur-[100px] -ml-40 -mb-40 pointer-events-none" />
 
-            <div className="relative max-w-md group mt-6">
-              <EInput
-                placeHolder="Your email address"
-                className="rounded-full pl-6 pr-16 py-4 border-gray-100 focus:border-blue-500 bg-gray-50/50 transition-all shadow-sm text-sm"
-                name="email"
-                type="email"
-              />
-              <button className="absolute right-1.5 top-1/2 -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-blue-600 transition-all duration-500 shadow-xl active:scale-90">
-                <TiLocationArrow size={22} />
-              </button>
+        <Container>
+          <div className="relative z-10 py-16 md:py-24 px-6 md:px-0">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+              
+              <div className="lg:col-span-7 space-y-12">
+                <div className="space-y-6">
+                  <h3 className="text-2xl md:text-4xl font-black tracking-[-0.05em] text-gray-900 leading-[0.85]">
+                    READY TO <br />
+                    <span className="text-blue-600 italic">CONNECT?</span>
+                  </h3>
+                  <p className="text-gray-500 max-w-lg text-lg font-medium leading-relaxed">
+                    Let's turn your ambitious ideas into reality. Whether it's a new project or just a friendly hello, I'm all ears.
+                  </p>
+                </div>
+
+                <div className="relative max-w-md group">
+                  <div className="relative flex items-center bg-gray-50 border border-gray-200 rounded-2xl p-1.5 focus-within:border-blue-500 focus-within:bg-white transition-all duration-300">
+                    <input 
+                      type="email" 
+                      placeholder="Your email address" 
+                      className="flex-1 bg-transparent px-6 py-4 text-sm text-gray-900 outline-none placeholder:text-gray-400"
+                    />
+                    <button className="bg-gray-900 text-white p-4 rounded-xl hover:bg-blue-600 transition-all duration-500 shadow-lg active:scale-95">
+                      <TiLocationArrow size={24} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 flex flex-col lg:items-end space-y-16">
+                <div className="text-left lg:text-right space-y-4">
+                  <p className="text-[12px] font-black text-blue-600 uppercase tracking-[0.5em]">Direct Line</p>
+                  <a 
+                    href="mailto:kawsarhasanjoy342@gmail.com" 
+                    className="text-md md:text-xl font-black text-gray-900 hover:text-blue-600 transition-all duration-300 break-all lg:break-normal tracking-tighter decoration-blue-100 underline underline-offset-8"
+                  >
+                    kawsarhasanjoy342@gmail.com
+                  </a>
+                  <p className="text-gray-400 font-semibold text-sm">Open for Freelance & Full-time Roles</p>
+                </div>
+
+                <div className="flex flex-wrap gap-5">
+                  {[
+                    { icon: <FaFacebookF />, hover: "hover:text-[#1877F2]", href: "#" },
+                    { icon: <FaTwitter />, hover: "hover:text-[#1DA1F2]", href: "#" },
+                    { icon: <FaLinkedinIn />, hover: "hover:text-[#0A66C2]", href: "#" },
+                    { icon: <FaGithub />, hover: "hover:text-black", href: "#" },
+                  ].map((social, idx) => (
+                    <Link
+                      key={idx}
+                      href={social.href}
+                      className={`w-14 h-14 flex items-center justify-center rounded-2xl bg-white border border-gray-100 text-gray-400 ${social.hover} hover:border-blue-100 hover:bg-blue-50/30 transition-all duration-500 shadow-sm hover:shadow-xl hover:-translate-y-2`}
+                    >
+                      {React.cloneElement(social.icon as React.ReactElement, { size: 22 })}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-24 pt-10 border-t border-gray-100 flex flex-col lg:flex-row justify-between items-center gap-10">
+              <nav className="flex flex-wrap gap-10 justify-center">
+                {["Portfolio", "Skill", "About", "Blog", "Contact"].map((item) => (
+                  <Link
+                    key={item}
+                    href={`/${item.toLowerCase()}`}
+                    className="group relative text-[11px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-gray-900 transition-colors"
+                  >
+                    {item}
+                    <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-500"></span>
+                  </Link>
+                ))}
+              </nav>
+
+              <div className="flex flex-col items-center lg:items-end gap-4">
+                <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-emerald-50 rounded-full border border-emerald-100">
+                  <div className="h-2 w-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.3)]"></div>
+                  <span className="text-[10px] font-black text-emerald-700 uppercase tracking-[0.2em]">
+                    Available for Projects
+                  </span>
+                </div>
+                <p className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">
+                  &copy; {currentYear} — Crafted by Kawsar Hasan Joy
+                </p>
+              </div>
             </div>
           </div>
-
-          <div className="flex flex-col lg:items-end gap-8">
-            <div className="flex gap-4">
-              {[
-                {
-                  icon: <FaFacebookF />,
-                  color: "hover:text-[#1877F2]",
-                  href: "#",
-                },
-                {
-                  icon: <FaTwitter />,
-                  color: "hover:text-[#1DA1F2]",
-                  href: "#",
-                },
-                {
-                  icon: <FaLinkedinIn />,
-                  color: "hover:text-[#0A66C2]",
-                  href: "#",
-                },
-                { icon: <FaGithub />, color: "hover:text-black", href: "#" },
-              ].map((social, idx) => (
-                <Link
-                  key={idx}
-                  href={social.href}
-                  className={`w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-100 text-gray-400 ${social.color} hover:border-blue-200 hover:shadow-lg hover:shadow-blue-100/50 transition-all duration-300`}
-                >
-                  {social.icon}
-                </Link>
-              ))}
-            </div>
-            <div className="text-left lg:text-right space-y-1">
-              <p className="text-[10px] font-bold text-gray-300 uppercase tracking-[0.3em]">
-                Available for projects
-              </p>
-              <p className="text-lg font-black text-gray-800 tracking-tighter">
-                hello@yourportfolio.com
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
-
-        <div className="pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
-          <nav className="flex flex-wrap gap-8 justify-center order-2 md:order-1">
-            {["Portfolio", "Skill", "About", "Blog", "Contact"].map((item) => (
-              <Link
-                key={item}
-                href={`/${item.toLowerCase()}`}
-                className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-gray-400 hover:text-blue-600 transition-colors"
-              >
-                {item}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="text-center md:text-right order-3 space-y-2">
-            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-              &copy; {currentYear} — Crafted with passion
-            </p>
-            <div className="flex items-center justify-center md:justify-end gap-2">
-              <div className="h-1.5 w-1.5 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-[10px] font-black text-gray-800 uppercase tracking-tighter">
-                Next.js Optimized
-              </span>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </div>
+        </Container>
+      </div>
+    </footer>
   );
 };
 

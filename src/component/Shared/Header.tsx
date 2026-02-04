@@ -44,7 +44,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full hidden md:block">
+      <header className="fixed  left-1/2 -translate-x-1/2 z-50 w-full hidden md:block">
         <div className="bg-white/60 backdrop-blur-2xl border border-white/40 shadow-[0_10px_40px_rgba(0,0,0,0.08)] rounded-md ">
           <Container>
             <div className=" flex justify-between items-center py-2">
