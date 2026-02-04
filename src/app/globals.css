@@ -2,12 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-[#fafafa] text-gray-900 antialiased;
+  }
 
-h1{ @apply text-2xl bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text font-bold}
-li{ @apply bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text font-bold}
+  h1 {
+    @apply text-4xl font-black tracking-tighter;
+  }
+  li {
+    @apply list-none;
+  }
+}
 
 @layer components {
-    .btn {
-        @apply uppercase text-sm bg-gradient-to-r from-green-400 to-blue-500 text-white  w-28 h-10 relative after:absolute after:h-[100%] after:w-[100%] after:bg-gradient-to-r after:from-blue-500 after:to-green-400 after:top-0 after:left-0 transform overflow-hidden after:-translate-x-[100%] hover:after:translate-x-0 after:duration-500 after:text-white z-10 after:z-[-1] after:rounded-full
-    }
+  .btn {
+    @apply relative flex items-center justify-center gap-2 overflow-hidden 
+           bg-black text-white px-6 py-3 rounded-full text-xs font-bold 
+           tracking-widest uppercase transition-all duration-300 
+           hover:bg-blue-600 hover:shadow-xl hover:shadow-blue-200 
+           active:scale-95 z-10;
+  }
+
+  .btn-outline {
+    @apply border-2 border-gray-200 bg-transparent text-gray-900 
+           hover:border-black hover:bg-black hover:text-white transition-all;
+  }
+}
+
+.blog-content {
+  color: #1a1a1a !important;
+  line-height: 1.8;
+}
+
+.blog-content * {
+  color: inherit !important;
+  max-width: 100%;
+}
+
+.blog-content h1,
+.blog-content h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }

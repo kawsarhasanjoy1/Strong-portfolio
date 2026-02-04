@@ -1,150 +1,76 @@
 "use client";
+import { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
-import { FaDownload, FaFacebook } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import Link from "next/link";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import lottieJson from "../../../../../public/banner.json";
 
 const Home = () => {
-  const image = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 2 } },
-  };
-  const Text = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 2 } },
-  };
-  const TextY = {
-    hidden: { opacity: 0, y: 200 },
-    visible: { opacity: 1, y: 0, transition: { duration: 2 } },
-  };
-  const span = " Welcome to my website";
-  const split = span.split("");
+  const [mounted, setMounted] = useState(false);
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: lottieJson,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
-    <div
-      id="particles.js"
-      className=" md:flex w-full h-screen md:px-0 md:gap-48 px-3 font-[Poppins]"
-    >
-      <div className=" md:w-6/12 md:rounded-md  rounded-full w-full md:pl-16 flex justify-center items-center">
-        <motion.div
-          className=" "
-          variants={image}
-          initial="hidden"
-          animate="visible"
-        >
-          <Lottie options={defaultOptions} height={400} width={400} />
-        </motion.div>
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#fafafa] pt-20 md:pt-0">
+      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-200/20 rounded-full blur-3xl" />
 
+      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div
-          variants={image}
-          initial="hidden"
-          animate="visible"
-          className=" relative rounded-full  md:w-6/12 w-80 h-80 mx-auto  overflow-hidden md:hidden"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="order-2 lg:order-1 text-center lg:text-left"
         >
-          <Lottie options={defaultOptions} height={400} width={400} />
-        </motion.div>
-      </div>
-      <motion.div
-        variants={Text}
-        animate="visible"
-        initial="hidden"
-        className=" md:w-8/12 md:flex justify-center items-center md:mt-0 mt-5 mx-auto "
-      >
-        <div className=" w-full text-start space-y-4 md:mt-0 mt-20">
-          <p className=" text-xl ">Hi!</p>
-          <motion.p
-            variants={TextY}
-            initial="hidden"
-            animate="visible"
-            className=" md:text-3xl text-xl uppercase hover:text-green-400"
-          >
-            {split.map((item, index) => {
-              return (
-                <span
-                  key={index}
-                  style={{ transitionDelay: `${index * 30}ms` }}
-                >
-                  {item}
-                </span>
-              );
-            })}
-          </motion.p>
-          <p className=" md:text-3xl text-xl uppercase">
-            {split.map((item, index) => {
-              return (
-                <motion.span
-                  variants={TextY}
-                  initial="hidden"
-                  animate="visible"
-                  key={index}
-                >
-                  {item}
-                </motion.span>
-              );
-            })}
-          </p>
-          <p className=" md:text-xl text-[10px] mt-3 mb-4">
+          <h1 className="text-4xl md:text-6xl font-black text-gray-900 leading-[1.1] mb-6 tracking-tighter">
+            Hi, I'm{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">
+              Kawsar Hasan
+            </span>
+          </h1>
+
+          <div className="h-20 md:h-24">
             <TypeAnimation
               sequence={[
-                "I A'M REACT DEVELOPER",
+                "I'M A REACT DEVELOPER",
                 1000,
-                "I A'M MERN STACK DEVELOPER",
+                "I'M A MERN STACK DEVELOPER",
                 1000,
               ]}
-              speed={40}
-              style={{ fontSize: "2em" }}
+              speed={50}
+              className="text-xl md:text-3xl font-bold text-gray-600 uppercase tracking-tight"
               repeat={Infinity}
             />
-          </p>
+          </div>
 
-          <div className=" flex gap-4 h-10 items-center ">
-            <Link href={"https://github.com/kawsarhasanjoy1"}>
-              {" "}
-              <p className="hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500  hover:text-white hover:mb-3 hover:duration-1000 hover:rounded-full p-3">
-                <BsGithub className="" size={30} />
-              </p>
-            </Link>
-            <Link
-              href={"https://www.linkedin.com/in/kawsar-hasan-joy-a86652287/"}
-            >
-              <p className="hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500  hover:text-white hover:mb-3 duration-1000 hover:duration-1000 hover:rounded-full p-3 rounded-full">
-                <BsLinkedin className="" size={30} />
-              </p>
-            </Link>
-            <Link
-              href={"https://www.facebook.com/profile.php?id=100077015388756"}
-            >
-              <p className="hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white hover:mb-3 hover:duration-1000 hover:rounded-full p-3">
-                <FaFacebook className="" size={30} />
-              </p>
-            </Link>
-          </div>
-          <div className="mt-4 md:space-x-8 space-x-2 flex items-center ">
-            <button className=" btn flex justify-center items-center w-60 rounded-sm">
-              Download Resume <FaDownload />
-            </button>
-            {/* <button className="text-xl box-border border-2 border-green-400 w-52 h-10 bg-green-400 text-white relative group">
-              <span className="pr-8">Download Resume</span>
-              <span className="bg-green-400 absolute right-0 top-0  h-full flex items-center justify-center px-1 group-hover:duration-300 group-hover:w-full w-8 duration-300">
-                <FaDownload />
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mt-10">
+            <button className="group relative px-8 py-4 bg-black text-white rounded-full font-bold text-sm tracking-widest overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-xl shadow-black/20">
+              <span className="relative z-10 flex items-center gap-2">
+                RESUME <FaDownload />
               </span>
-            </button> */}
+              <div className="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            </button>
           </div>
-        </div>
-      </motion.div>
-    </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="order-1 lg:order-2 flex justify-center items-center relative"
+        >
+          <div className="absolute w-[80%] h-[80%] border-2 border-dashed border-blue-200 rounded-full animate-[spin_20s_linear_infinite]" />
+          <div className="relative z-10 w-full max-w-[500px]">
+            <Lottie animationData={lottieJson} loop={true} autoplay={true} />
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

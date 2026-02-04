@@ -1,67 +1,39 @@
 "use client";
-import { useAnimation, useInView } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { IoFileTrayFullSharp } from "react-icons/io5";
 import { RxCardStackMinus } from "react-icons/rx";
 import { TbStackFront } from "react-icons/tb";
-import { motion } from "framer-motion";
-import { button, icon, textH } from "@/FramarMotion/motionVarients";
+
 const Service = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref);
-  const controls = useAnimation();
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [inView,controls]);
+  const services = [
+    { title: "Frontend Dev", icon: <TbStackFront />, desc: "Building responsive and interactive user interfaces with React and Next.js." },
+    { title: "MERN-Stack", icon: <RxCardStackMinus />, desc: "End-to-end web applications using MongoDB, Express, React, and Node." },
+    { title: "Full-Stack", icon: <IoFileTrayFullSharp />, desc: "Complete solutions with authentication, databases, and optimized APIs." },
+  ];
 
   return (
-    <div className=" space-y-10 mt-14">
-      <p className=" text-center text-3xl font-bold text-white">Services</p>
-      <div className=" text-white grid grid-cols-1 md:grid-cols-3 gap-6 group">
-        <motion.div
-          variants={icon}
-          ref={ref}
-          animate={controls}
-          initial="hidden"
-          className=" flex flex-col justify-center items-center bg-slate-600 opacity-60 py-10 text-center px-2 text-white rounded-sm space-y-2 group-hover:blur-sm hover:!blur-none group-hover:scale-100 hover:!scale-105 duration-700 "
-        >
-          <TbStackFront size={50} />
-          <p className=" text-xl font-bold text-white ">Frontend development</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas porro
-            deleniti temporibus ipsam
-          </p>
-        </motion.div>
-        <motion.div  variants={textH}
-          ref={ref}
-          animate={controls}
-          initial="hidden" className=" flex flex-col justify-center items-center bg-slate-600 opacity-60 py-10 text-center px-2 text-white rounded-sm space-y-2 group-hover:blur-sm hover:!blur-none group-hover:scale-100 hover:!scale-105 duration-700 ">
-          <RxCardStackMinus size={50} />
-          <p className=" text-xl font-bold text-white ">
-            Mern-stack development
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas porro
-            deleniti temporibus ipsam
-          </p>
-        </motion.div>
-        <motion.div  variants={button}
-          ref={ref}
-          animate={controls}
-          initial="hidden" className=" flex flex-col justify-center items-center bg-slate-600 opacity-60 py-10 text-center px-2 text-white rounded-sm space-y-2 group-hover:blur-sm hover:!blur-none group-hover:scale-100 hover:!scale-105 duration-700 ">
-          <IoFileTrayFullSharp size={50} />
-          <p className=" text-xl font-bold text-white ">
-            Full-stack development
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas porro
-            deleniti temporibus ipsam
-          </p>
-        </motion.div>
+    <div className="py-24">
+      <div className="text-center mb-16 space-y-2">
+        <h2 className="text-4xl font-black tracking-tighter">OUR SERVICES</h2>
+        <p className="text-gray-400 font-bold uppercase tracking-[0.3em] text-[10px]">What I offer to my clients</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {services.map((service, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ y: -10 }}
+            className="p-10 rounded-[2.5rem] bg-white border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] text-center space-y-5 hover:shadow-xl hover:shadow-blue-50 transition-all duration-500 group"
+          >
+            <div className="w-20 h-20 mx-auto flex items-center justify-center rounded-3xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-inner">
+              <span className="text-4xl">{service.icon}</span>
+            </div>
+            <h3 className="text-xl font-black text-gray-900 tracking-tight uppercase">{service.title}</h3>
+            <p className="text-gray-500 text-sm leading-relaxed font-medium">
+              {service.desc}
+            </p>
+          </motion.div>
+        ))}
       </div>
     </div>
   );

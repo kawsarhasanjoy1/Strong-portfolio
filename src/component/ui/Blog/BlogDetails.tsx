@@ -28,7 +28,10 @@ const BlogDetails = ({ blog }: { blog: TBlog }) => {
         </div>
       </div>
       <div>
-        <div dangerouslySetInnerHTML={{ __html: blog.description }} />
+        <div
+          dangerouslySetInnerHTML={{ __html: blog?.description }}
+          className="blog-content"
+        />
       </div>
       <div className="">
         <div className="flex justify-between items-center mt-5 py-5">

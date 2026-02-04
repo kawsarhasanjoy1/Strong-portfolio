@@ -1,55 +1,46 @@
+"use client";
 import { TPortfolio } from "@/types/global";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import Button from "../../Button/Button";
-import { FaArrowRight } from "react-icons/fa";
-const image = "https://askbootstrap.com/preview/eatsie/assets/img/logo.svg";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const PortfolioCart = ({ products }: { products: TPortfolio }) => {
   return (
-    <div
-      className={`relative border border-gray-200 rounded-lg shadow  bg-gray-800 dark:border-gray-700 hover:-translate-y-2 duration-1000  hover:transition-colors hover:delay-300 hover:duration-500 min-h-[500px] max-h-[600px]  mt-20 pb-7 text-white `}
-    >
-      <div className=" relative  h-full">
-        <div>
-          <div>
-            <div className="mx-auto ">
-              <div>
-                <div className=" max-w-full h-60 overflow-hidden">
-                  <div className="h-max w-full transition-transform duration-[5000ms] ease-linear transform translate-y-0 hover:-translate-y-[calc(100%-18rem)]">
-                    <Image
-                      width={100}
-                      height={150}
-                      src={products.image}
-                      alt="image"
-                      className="w-full object-cover object-top "
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className=" gap-5 mt-5 md:px-4 mx-2">
-              <h1 className=" text-start font-bold md:text-2xl text-xl">
-                {products?.name}
-              </h1>
-              <p className="text-start mt-3">
-                {products?.description.slice(0, 200)}
-              </p>
-            </div>
-          </div>
+    <div className="group bg-white rounded-[2.5rem] border border-gray-100 overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 flex flex-col h-full">
+      <div className="relative h-64 overflow-hidden">
+        <div className="h-full w-full transition-transform duration-[6000ms] ease-in-out transform translate-y-0 group-hover:-translate-y-[calc(100%-16rem)]">
+          <Image
+            width={500}
+            height={700}
+            src={products.image}
+            alt={products.name}
+            className="w-full object-cover object-top"
+          />
         </div>
+        <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      </div>
+      <div className="p-8 flex flex-col flex-grow">
+        <h3 className="text-2xl font-black text-gray-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors">
+          {products?.name}
+        </h3>
+        <p className="text-gray-500 text-sm leading-relaxed mb-8 line-clamp-3 font-medium">
+          {products?.description}
+        </p>
 
-        <div className="  w-full flex justify-between absolute -bottom-7">
-          <a target="_blank" href={products?.githubLink}>
-            <Button className=" w-full flex justify-center items-center gap-2 font-bold px-5">
-              Github link <FaArrowRight />
-            </Button>
+        <div className="mt-auto flex gap-4">
+          <a
+            href={products?.githubLink}
+            target="_blank"
+            className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-gray-50 text-gray-700 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-300"
+          >
+            <FaGithub className="text-lg" /> Code
           </a>
-          <a href={products?.liveLink} target="_blank">
-            <Button className=" w-full flex justify-center items-center gap-2 font-bold px-5">
-              Live link <FaArrowRight />
-            </Button>
+          <a
+            href={products?.liveLink}
+            target="_blank"
+            className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-blue-50 text-blue-600 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all duration-300"
+          >
+            <FaExternalLinkAlt /> Live
           </a>
         </div>
       </div>

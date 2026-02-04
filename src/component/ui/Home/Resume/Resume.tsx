@@ -1,80 +1,46 @@
-'use client'
-import React, { useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
-import { button, icon } from "@/FramarMotion/motionVarients";
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
 
 const Resume = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref);
-  const controls = useAnimation();
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [inView,controls]);
+  const data = {
+    experience: [
+      { year: "2022-Present", title: "Frontend Developer", company: "Programming Hero" },
+      { year: "2022-Present", title: "MERN Stack Developer", company: "Portfolio Projects" },
+    ],
+    education: [
+      { year: "2020-2022", title: "SSC (Secondary School)", company: "Madrasah Board" },
+      { year: "2022-2024", title: "HSC (Higher Secondary)", company: "Mymensingh Board" },
+    ]
+  };
+
+  const ResumeCard = ({ item }: any) => (
+    <div className="group p-8 rounded-[2rem] bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-blue-50 transition-all duration-500 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-1 h-full bg-blue-600 scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top"></div>
+      <span className="text-blue-600 font-black text-sm tracking-widest">{item.year}</span>
+      <h3 className="text-2xl font-black text-gray-900 mt-2 tracking-tighter uppercase">{item.title}</h3>
+      <p className="text-gray-500 font-bold text-xs mt-1 uppercase tracking-widest">{item.company}</p>
+    </div>
+  );
+
   return (
-    <div className=" grid grid-cols-1 md:grid-cols-2 gap-20 my-24">
-      <motion.div variants={icon} animate={controls} initial='hidden' ref={ref} >
-        <p className=" font-bold text-3xl text-white my-10">My Experience</p>
-        <div className=" space-y-6">
-          <div className=" bg-[#2220207a] py-5 md:h-48 h-56 flex flex-col justify-center item-center px-8 hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-green-400 duration-500 rounded-lg space-y-3">
-            <p className="  font-bold text-xl text-white"> 2022-Present</p>
-            <p className="text-3xl font-bold">Frontend developer</p>
-            <p className="text-xl  font-bold text-white">
-              {" "}
-              Completed course from Programming hero
-            </p>
-          </div>
-          <div className=" bg-[#2220207a] py-5 md:h-48 h-56 flex flex-col justify-center item-center px-8 hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-green-400 duration-500 rounded-lg space-y-3">
-            <p className="  font-bold text-xl text-white"> 2022-Present</p>
-            <p className="text-3xl font-bold">Mern-stack developer</p>
-            <p className="text-xl  font-bold text-white">
-              {" "}
-              Completed course from Programming hero
-            </p>
-          </div>
-          <div className=" bg-[#2220207a] py-5 md:h-48 h-56 flex flex-col justify-center item-center px-8 hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-green-400 duration-500 rounded-lg space-y-3">
-            <p className="  font-bold text-xl text-white"> 2022-Present</p>
-            <p className="text-3xl font-bold">Full-stack developer</p>
-            <p className="text-xl  font-bold text-white">
-              Completed course from Programming hero
-            </p>
-          </div>
+    <div className="py-24 grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <div>
+        <h2 className="text-3xl font-black tracking-tighter mb-12 flex items-center gap-4">
+          <span className="w-12 h-[2px] bg-blue-600"></span> MY EXPERIENCE
+        </h2>
+        <div className="space-y-6">
+          {data.experience.map((exp, i) => <ResumeCard key={i} item={exp} />)}
         </div>
-      </motion.div>
-      <motion.div variants={button} animate={controls} initial='hidden' ref={ref}>
-        <p className=" font-bold text-3xl text-white my-10">My Education</p>
-        <div className=" space-y-6">
-          <div className=" bg-[#2220207a] py-5 md:h-48 h-56 flex flex-col justify-center item-center px-8 hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-green-400 duration-500 rounded-lg space-y-3">
-            <p className="  font-bold text-xl text-white"> 2020-2022</p>
-            <p className="text-3xl font-bold">Secondary School Certificate</p>
-            <p className="text-xl  font-bold text-white">
-              I have completed Secondary School Certificate from madrasah board
-              ,Mymensingh
-            </p>
-          </div>
-          <div className=" bg-[#2220207a] py-5 md:h-48 h-56 flex flex-col justify-center item-center px-8 hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-green-400 duration-500 rounded-lg space-y-3">
-            <p className="  font-bold text-xl text-white"> 2022-24</p>
-            <p className="text-3xl font-semibold">
-              Higher Secondary School Certificate
-            </p>
-            <p className="text-xl  font-bold text-white">
-              I have not completed Higher Secondary School Certificate
-            </p>
-          </div>
-          <div className=" bg-[#2220207a] py-5 md:h-48 h-56 flex flex-col justify-center item-center px-8 hover:bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-green-400 duration-500 rounded-lg space-y-3">
-            <p className="  font-bold text-xl text-white"> 2019-2020</p>
-            <p className="text-3xl font-bold">Junior Dakhil Certificate</p>
-            <p className="text-xl  font-bold text-white">
-              {" "}
-              I have completed Secondary School Certificate from madrasah board
-              ,Mymensingh
-            </p>
-          </div>
+      </div>
+      <div>
+        <h2 className="text-3xl font-black tracking-tighter mb-12 flex items-center gap-4">
+          <span className="w-12 h-[2px] bg-green-500"></span> MY EDUCATION
+        </h2>
+        <div className="space-y-6">
+          {data.education.map((edu, i) => <ResumeCard key={i} item={edu} />)}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

@@ -5,55 +5,50 @@ import { BiPhoneCall } from "react-icons/bi";
 import { FaAddressCard } from "react-icons/fa";
 
 const ContactInfo = () => {
+  const infoItems = [
+    {
+      icon: <BiPhoneCall size={24} />,
+      title: "Phone",
+      value: "+8801405951898",
+      link: "tel:+8801405951898",
+    },
+    {
+      icon: <AiOutlineMail size={24} />,
+      title: "Email",
+      value: "kawsarhasahjoy342@gmail.com",
+      link: "mailto:kawsarhasahjoy342@gmail.com",
+    },
+    {
+      icon: <FaAddressCard size={24} />,
+      title: "Address",
+      value: "Gouripur, Mymensingh",
+      link: "#",
+    },
+  ];
+
   return (
-    <div className=" flex flex-col flex-1 justify-center items-center w-full bg-[#2220207a] md:bg-transparent rounded-[50px] ">
-      <div className=" space-y-5 -2xl mx-2">
-        <div className=" rounded-lg -2xl  text-start flex md:gap-5 gap-3 md:pl-5 pl-3 py-8 text-white">
-          <div>
-            <p className=" bg-gradient-to-r from-green-400 to-blue-500 md:w-16 md:h-16 w-10 h-10 flex items-center justify-center rounded-full text-white">
-              <BiPhoneCall size={20} />
-            </p>
+    <div className="flex flex-col gap-6 w-full">
+      {infoItems.map((item, index) => (
+        <div 
+          key={index} 
+          className="group flex items-center gap-6 p-6 rounded-[2rem] bg-white border border-gray-100 hover:border-blue-200 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-xl"
+        >
+          <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400 to-blue-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+            {item.icon}
           </div>
-          <div>
-            <h1 className=" font-bold font-[Radio Canada,sans-serif] text-xl mb-3 ">
-              Phone
-            </h1>
-            <p className=" hover:text-green-400 duration-500">+8801405951898</p>
-          </div>
-        </div>
-
-        <div className=" rounded-lg  text-white  text-start flex md:gap-5 gap-3 md:pl-5 pl-3 py-8">
-          <div>
-            <p className=" bg-gradient-to-r from-green-400 to-blue-500  md:w-16 md:h-16 w-10 h-10 flex items-center justify-center rounded-full text-white">
-              <AiOutlineMail size={20} />
-            </p>
-          </div>
-          <div>
-            <h1 className=" bg-primary-gradient  font-bold font-[Radio Canada,sans-serif] text-xl mb-3 ">
-              Email
-            </h1>
-            <p className=" hover:text-green-400 duration-500 ">
-              kawsarhasahjoy342@gmail.com
-            </p>
+          <div className="text-start">
+            <h3 className="text-gray-400 text-[10px] font-black uppercase tracking-[0.2em] mb-1">
+              {item.title}
+            </h3>
+            <a 
+              href={item.link} 
+              className="text-gray-800 font-black text-lg hover:text-blue-600 transition-colors duration-300 break-all md:break-normal tracking-tight"
+            >
+              {item.value}
+            </a>
           </div>
         </div>
-
-        <div className=" rounded-lg text-white   text-start flex md:gap-5 gap-3 pl-3 md:pl-5 py-8">
-          <div>
-            <p className="bg-gradient-to-r from-green-400 to-blue-500 md:w-16 md:h-16 w-10 h-10 flex items-center justify-center rounded-full text-white">
-              <FaAddressCard size={30} />
-            </p>
-          </div>
-          <div>
-            <h1 className=" font-bold font-[Radio Canada,sans-serif] text-xl mb-3 ">
-              Address
-            </h1>
-            <p className=" hover:text-green-400 duration-500">
-              Gouripur,Mymensingh
-            </p>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
