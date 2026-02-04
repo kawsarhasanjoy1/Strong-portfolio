@@ -28,7 +28,7 @@ const Home = () => {
           className="order-2 lg:order-1 text-center lg:text-left"
         >
           <h1 className="text-4xl md:text-6xl font-black text-gray-900 leading-[1.1] mb-6 tracking-tighter">
-            Hi, I'm{" "}
+            Hi, I&apos;m{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">
               Kawsar Hasan
             </span>

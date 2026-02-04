@@ -8,7 +8,7 @@ const Contact = () => {
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter uppercase">
-            Let's <span className="text-blue-600">Connect</span>
+            Let&apos;s <span className="text-blue-600">Connect</span>
           </h2>
           <div className="h-1.5 w-24 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mx-auto mt-4"></div>
         </div>
@@ -20,7 +20,7 @@ const Contact = () => {
             </h3>
             <ContactInfo />
           </div>
-          <div className="w-full lg:w-2/3 bg-gray-50  md:p-12 rounded-[2.5rem] border border-gray-100 shadow-sm">
+          <div className="w-full lg:w-2/3 bg-gray-50 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-sm">
             <ContactForm />
           </div>
         </div>

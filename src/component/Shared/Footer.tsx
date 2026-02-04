@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
 import React from "react";
 import { FaFacebookF, FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
@@ -15,7 +16,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pb-12">
           <div className="space-y-4">
             <h3 className="text-3xl font-black tracking-tighter text-gray-900 leading-none">
-              LET'S BUILD SOMETHING <br />
+              LET&apos;S BUILD SOMETHING <br />
               <span className="text-blue-600 italic">EXTRAORDINARY.</span>
             </h3>
             <p className="text-gray-500 max-w-sm text-[13px] font-medium leading-relaxed tracking-wide">

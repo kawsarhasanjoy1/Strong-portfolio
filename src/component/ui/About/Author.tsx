@@ -98,19 +98,21 @@ const Author = () => {
                 </div>
               ))}
             </div>
+            
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-4">
               <div className="flex gap-3">
+                {/* সোশ্যাল আইকন এরর ফিক্স: আইডি এবং আইকন অবজেক্ট ব্যবহার */}
                 {[
-                  <FiTwitter />,
-                  <FiFacebook />,
-                  <FiLinkedin />,
-                  <FiGithub />,
-                ].map((icon, i) => (
+                  { id: "twitter", icon: <FiTwitter /> },
+                  { id: "facebook", icon: <FiFacebook /> },
+                  { id: "linkedin", icon: <FiLinkedin /> },
+                  { id: "github", icon: <FiGithub /> },
+                ].map((social) => (
                   <button
-                    key={i}
+                    key={social.id} // এখানে ইউনিক কি (key) দেওয়া হয়েছে
                     className="w-12 h-12 flex items-center justify-center rounded-2xl bg-gray-900 text-white hover:bg-blue-600 hover:-translate-y-1.5 transition-all duration-300 shadow-lg shadow-gray-200"
                   >
-                    <span className="text-xl">{icon}</span>
+                    <span className="text-xl">{social.icon}</span>
                   </button>
                 ))}
               </div>
