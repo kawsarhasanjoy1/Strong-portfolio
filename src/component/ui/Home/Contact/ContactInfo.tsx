@@ -28,7 +28,7 @@ const ContactInfo = () => {
 
   return (
     <div className="flex flex-col gap-6 w-full">
-      {infoItems.map((item, index) => (
+      {infoItems?.map((item, index) => (
         <div 
           key={index} 
           className="group flex items-center gap-6 p-6 rounded-[2rem] bg-white border border-gray-100 hover:border-blue-200 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-xl"
@@ -42,7 +42,7 @@ const ContactInfo = () => {
             </h3>
             <a 
               href={item.link} 
-              className="text-gray-800 font-black text-lg hover:text-blue-600 transition-colors duration-300 break-all md:break-normal tracking-tight"
+              className="text-gray-800 font-black text-md hover:text-blue-600 transition-colors duration-300 break-all md:break-normal tracking-tight"
             >
               {item.value}
             </a>

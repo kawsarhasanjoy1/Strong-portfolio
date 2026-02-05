@@ -4,26 +4,31 @@ import FileUpload from "@/component/Forms/FileUpload";
 import PForm from "@/component/Forms/PForm";
 import PInput from "@/component/Forms/PInput";
 import { portfolioDefaultValue } from "@/defaultValues/defaultValues";
-import useHostImage from "@/hook/useHosImage";
+import hostImage from "@/hook/useHosImage";
 import { useCreateProjectMutation } from "@/redux/api/projectApi";
 import { projectSchema } from "@/validation/project";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
 import React from "react";
 import { FieldValues } from "react-hook-form";
 import toast from "react-hot-toast";
 
 const page = () => {
-  const [createProject] = useCreateProjectMutation();
+  const [createProject, { isLoading }] = useCreateProjectMutation();
   const HandleToSubmit = async (values: FieldValues) => {
-    const image = await useHostImage(values?.image);
+    const image = await hostImage(values?.image);
+    console.log(image);
     const project = {
       ...values,
       image: image?.display_url,
     };
-    const res = await createProject(project).unwrap();
-    if (res?.success) {
-      toast.success(res?.message);
+    try {
+      const res = await createProject(project).unwrap();
+      if (res?.success) {
+        toast.success(res?.message);
+      }
+    } catch (err: any) {
+      console.log(err);
+      toast.error(err?.data?.message);
     }
   };
   return (
@@ -94,7 +99,7 @@ const page = () => {
                 type="submit"
                 className=" bg-green-500 px-10 py-2 text-white font-bold uppercase rounded-md"
               >
-                Submit
+                {isLoading ? "Submiting..." : "Submit"}
               </button>
             </div>
           </div>
